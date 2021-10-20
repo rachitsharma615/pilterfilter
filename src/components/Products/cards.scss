@@ -1,0 +1,154 @@
+@mixin px($px) {
+	padding-left: $px;
+	padding-right: $px;
+}
+
+@mixin py($py) {
+	padding-top: $py;
+	padding-bottom: $py;
+}
+:root {
+	--secondary: #eef7fe;
+	--primary: #22215B;
+	--primary-light: #202124;
+--font-body: Montserrat, Poppins, sans-serif;
+}
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-family: var(--font-body);
+}
+
+body {
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// min-height: 100vh;
+	// background-color: #E7E9F0;
+}
+
+ul {
+	list-style: none;
+}
+
+button {
+	font-family: inherit;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+h1,
+h2,
+h3 {
+	margin-top: 0;
+	line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+	text-decoration: none;
+}
+body {
+    padding: 20px;
+}
+
+@media screen and (max-width: 540px) {
+    .card{
+        margin: 75px auto;
+        // display: flex;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+.AllCards{
+    display: inline-flex;
+    margin-left: 20%;
+}
+.card{
+    margin: 75px 10px auto;
+    
+}
+}
+
+.AllCards
+{
+    // display: inline-block;
+}
+
+
+.card {
+    margin-top: 5%;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 16px;
+    width: max-content;
+    text-align: center;
+    box-shadow: 0 14px 30px 0 #0000002e;
+  border-radius:40px;
+// margin-left: 20vw;
+margin-top: 14%;
+// margin: 75px auto;
+// display: inline-block;
+
+  
+  &:hover &-image{
+    transform:translatey(10px)
+  }
+
+    &-image {
+        width: 220px;
+        height: 190px;
+
+        margin-top: -62px;
+      object-fit:cover;
+      border-radius:40px;
+      transition:transform .4s;
+    }
+
+    &-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    &-price {
+        margin-bottom: 16px;
+
+        span {
+            text-decoration: line-through;
+            font-size: 12px;
+            color: #2021246b;
+            margin-left: 20px;
+        }
+    }
+
+    &-action {
+        @include py(12px);
+        @include px(30px);
+        background-color: #000;
+        color: #fff;
+        border-radius: 100px;
+        font-weight: bold;
+
+        &:hover {
+            background-color: lighten($color: rgb(247, 247, 247), $amount: 10);
+            color: #000;
+            border: 2px solid black;
+        }
+    }
+
+
+}
