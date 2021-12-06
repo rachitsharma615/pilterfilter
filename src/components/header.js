@@ -1,9 +1,23 @@
 import React from "react";
+import { useState } from "react";
 import './header.scss'
 import ProductCards from "./Products/ProductCards";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
-function header() {
+
+
+function value(number)
+{
+    
+    setCardValue(number);
+}
+
+export default function header() {
+    const [CardValue, setCardValue] = useState();
+   
   return (
+
+
       <>
     <header>
     <nav>
@@ -20,6 +34,7 @@ function header() {
               <li><a href="">About</a></li>
               <li><a href="">FAQs</a></li>
               <li><a id="signup" href="">Contact</a></li>
+              <li><a href=""><AddShoppingCartIcon/>  <span class='badge badge-warning' id='lblCartCount'> {cardValue} </span></a></li>
           </ul>
         </div>
         <input type="checkbox" name="" id="hamburger"/>
@@ -38,7 +53,9 @@ function header() {
         <a href="">Get a Demo</a>
     </div> */}
 
-    <ProductCards/>
+    <ProductCards 
+    
+    />
     
     {/* <div className="info">
         Wercel combines the best developer experience with an obsessive focus on end-user performance. Our platform enables frontend teams to do their best work.
@@ -49,4 +66,4 @@ function header() {
   );
 }
 
-export default header;
+
